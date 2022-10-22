@@ -36,39 +36,21 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
+                        <b>
                             <img src="{{ asset('Admin/assets') }}/images/logo-icon.png" alt="homepage"
                                 class="dark-logo" />
-                            <!-- Light Logo icon -->
                             <img src="{{ asset('Admin/assets') }}/images/logo-light-icon.png" alt="homepage"
                                 class="light-logo" />
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                            <!-- dark Logo text -->
-                            <img src="{{ asset('Admin/assets') }}/images/logo-text.png" alt="homepage"
-                                class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="{{ asset('Admin/assets') }}/images/logo-light-text.png" class="light-logo"
-                                alt="homepage" />
+                        <span color="">
+                            MIKRO
                         </span>
                     </a>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
                 <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
                                 href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
                         <li class="nav-item hidden-xs-down search-box"> <a
                                 class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="fa fa-search"></i></a>
@@ -78,24 +60,18 @@
                             </form>
                         </li>
                     </ul>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- Profile -->
-                        <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
                                 id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="{{ asset('Admin/assets') }}/images/users/1.jpg"
-                                    alt="user" class="" /> <span class="hidden-md-down">Mark Sanders
+                                aria-expanded="false"><img src="{{ asset('upload') }}{{ Auth::user()->profile }}"
+                                    alt="admin" /><span class="hidden-md-down">{{ Auth::user()->name }}
                                     &nbsp;</span> </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
                                     <div class="nav-item">
                                         <a class="nav-link" role="button">
-                                            <i class="fas fa-sign-out-alt"></i>
+                                            <i class="fas fa-arrow-up"></i>
                                             Profile
                                         </a>
                                     </div>
@@ -123,9 +99,7 @@
         </header>
 
         <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="{{ route('dashboard') }}"
@@ -133,60 +107,74 @@
                                     class="hide-menu">Dashboard</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" data-toggle="modal" data-target="#exampleModalCenter"
-                                aria-expanded="false"><i class="far fa-folder-plus"></i><span class="hide-menu">Add
+                                aria-expanded="false"><i class="fa-solid fa-box-archive"></i><span
+                                    class="hide-menu">Add
                                     Category</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('admin.cat.home') }}"
                                 aria-expanded="false">
-                                <i class="far fa-folder-plus"></i><span class="hide-menu">Categories</span></a>
+                                <i class="fa-solid fa-folder-tree"></i><span class="hide-menu">Categories</span></a>
                         </li>
                     </ul>
                 </nav>
-                <!-- End Sidebar navigation -->
             </div>
-            <!-- End Sidebar scroll-->
         </aside>
 
-        <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Add Category</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Save changes</button>
-                    </div>
+                    <form action="{{ route('admin.cat.add') }}" method="POST" enctype="multipart/form-data"
+                        class="p-5">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name_en">Name : </label>
+                            <input type="text" name="name_en" class="form-control" id="name_en"
+                                aria-describedby="category_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name_ar">Name Arabic : </label>
+                            <input type="text" name="name_ar" class="form-control" id="name_ar"
+                                aria-describedby="category_name">
+                        </div>
+                        <div class="d-flex mt-3" style="justify-content: space-around">
+                            <textarea class="form-control col-5" placeholder="description english" name="desc_en" id="desc_en" cols="30"
+                                rows="10"></textarea>
+                            <textarea class="form-control col-5" placeholder="description arabic" name="desc_ar" id="desc_ar" cols="30"
+                                rows="10"></textarea>
+                        </div>
+
+                        <div class="input-group mb-3 mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Image</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name="img" class="custom-file-input" id="inputGroupFile01"
+                                    aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+
+                    </form>
+
+
                 </div>
             </div>
         </div>
 
+
+
         @yield('Admin-Contain')
 
 
-        <footer class="footer"> © 2021 Adminwrap by <a href="https://www.wrappixel.com/">wrappixel.com</a> </footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
+        <footer class="footer"> © Mikro by <a href="https://www.yahyabouhsine.ml/">Yahya Bouhsine</a> </footer>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -200,26 +188,15 @@
 
     <script src="https://kit.fontawesome.com/c4ab0d66b7.js" crossorigin="anonymous"></script>
     <script src="{{ asset('Admin/assets') }}/node_modules/jquery/jquery.min.js"></script>
-    <!-- Bootstrap popper Core JavaScript -->
     <script src="{{ asset('Admin/assets') }}/node_modules/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
     <script src="{{ asset('Admin/js') }}/perfect-scrollbar.jquery.min.js"></script>
-    <!--Wave Effects -->
     <script src="{{ asset('Admin/js') }}/waves.js"></script>
-    <!--Menu sidebar -->
     <script src="{{ asset('Admin/js') }}/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
     <script src="{{ asset('Admin/js') }}/custom.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!--morris JavaScript -->
     <script src="{{ asset('Admin/assets') }}/node_modules/raphael/raphael-min.js"></script>
     <script src="{{ asset('Admin/assets') }}/node_modules/morrisjs/morris.min.js"></script>
-    <!--c3 JavaScript -->
     <script src="{{ asset('Admin/assets') }}/node_modules/d3/d3.min.js"></script>
     <script src="{{ asset('Admin/assets') }}/node_modules/c3-master/c3.min.js"></script>
-    <!-- Chart JS -->
     <script src="{{ asset('Admin/js') }}/dashboard1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
 </body>

@@ -48,8 +48,7 @@
         </div>
 
 
-        <div class="row">
-            <!-- Column -->
+        <div class="row" style="padding-left: 240px;">
             <div class="col-lg-12 d-flex align-items-stretch">
                 <div class="card w-100">
                     <div class="card-body">
@@ -100,7 +99,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Column -->
         </div>
     </div>
 @endsection

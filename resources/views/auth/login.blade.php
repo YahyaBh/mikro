@@ -31,8 +31,11 @@
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
-                    <input type="checkbox" id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <label class="control control-checkbox">
+                        {{ __('Remember me') }}
+                        <input type="checkbox" checked="checked" />
+                        <div class="control_indicator"></div>
+                    </label>
                 </label>
             </div>
             <br>

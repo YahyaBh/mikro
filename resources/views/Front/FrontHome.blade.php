@@ -72,7 +72,7 @@
             <div class="row d-flex align-items-center">
                 <div class="col-lg-7" data-aos="fade-right">
                     <p>ABOUT US</p>
-                    <h1>We are top internet <br> service company</h1>
+                    <h1>We are top Socail <br> Media company</h1>
                     <p class="py-2 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed accusantium
                         aut dolores inventore architecto modi cupiditate eligendi corporis, illum illo culpa. Reiciendis,
                         molestias. Illum voluptatum quisquam ad veritatis dolorem.</p>
@@ -243,14 +243,14 @@
                         <div class="my-3">
                             <a class="btn form-control-submit-button" href="#your-link">Submit</a>
                         </div>
-                    </div> <!-- end of div -->
-                </div> <!-- end of col -->
+                    </div> 
+                </div>
                 <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
                     <img class="img-fluid d-none d-lg-block" src="{{ asset('Front/assets') }}/images/contact.jpg"
                         alt="contact">
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
+                </div>
+            </div> 
+        </div> 
     </section>
 
 

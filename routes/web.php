@@ -14,7 +14,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/dashboard', [AdminHomeController::class , 'index'])->name('dashboard');
         Route::get('/category', [CategoryController::class , 'index'])->name('admin.cat.home');
         Route::post('/category_add', [CategoryController::class , 'add_cat'])->name('admin.cat.add');
-
-        
         });
 });

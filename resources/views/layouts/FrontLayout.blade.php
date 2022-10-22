@@ -5,23 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Your description">
-    <meta name="author" content="Your name">
+    <meta name="description" content="Socail Media">
+    <meta name="author" content="Mikro">
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-    <meta property="og:site_name" content="" /> <!-- website name -->
-    <meta property="og:site" content="" /> <!-- website link -->
-    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <title>Mirko </title>
 
-    <!-- Webpage Title -->
-    <title>Mirko - Broadband Company</title>
-
-    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="{{ asset('Front/css') }}/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('Front/css') }}/fontawesome-all.min.css" rel="stylesheet">
@@ -29,20 +17,14 @@
     <link href="{{ asset('Front/css') }}/swiper.css" rel="stylesheet">
     <link href="{{ asset('Front/css') }}/style.css" rel="stylesheet">
 
-    <!-- Favicon -->
     <link rel="icon" href="{{ asset('Front/assets') }}/images/favicon.png">
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
         <div class="container">
 
-            <!-- Image Logo -->
-            <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
-
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
             <a class="navbar-brand logo-text" href="index.html">Mirko</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
@@ -61,25 +43,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#services">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#plans">Plans</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown"
-                            aria-expanded="false" href="#">Drop</a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a class="dropdown-item" href="article.html">Article Details</a></li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                            </li>
-                            <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                            </li>
-                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </li>
+                    
                     @if (Auth::user())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown"
@@ -118,30 +82,15 @@
                     @endif
 
                 </ul>
-                <span class="nav-item social-icons">
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-twitter fa-stack-1x"></i>
-                        </a>
-                    </span>
-                </span>
-            </div> <!-- end of navbar-collapse -->
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+
+            </div>
+        </div> 
+    </nav>
 
 
 
     @yield('Front-Contain')
 
-    <!-- Footer -->
     <section class="footer text-light">
         <div class="container">
             <div class="row" data-aos="fade-right">
@@ -168,7 +117,7 @@
                             </a>
                         </div>
                     </div>
-                </div> <!-- end of col -->
+                </div> 
 
                 <div class="col-lg-3 py-4 py-md-5">
                     <div>
@@ -188,17 +137,11 @@
                         <div class="d-flex align-items-center py-2">
                             <i class="fas fa-caret-right"></i>
                             <a href="#">
-                                <p class="ms-3">Plans</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center py-2">
-                            <i class="fas fa-caret-right"></i>
-                            <a href="#">
                                 <p class="ms-3">Contact</p>
                             </a>
                         </div>
                     </div>
-                </div> <!-- end of col -->
+                </div> 
 
                 <div class="col-lg-3 py-4 py-md-5">
                     <div>
@@ -244,17 +187,16 @@
                             <button class="btn-secondary text-light"><i class="fas fa-envelope fa-lg"></i></button>
                         </div>
                     </div>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of footer -->
+                </div>
+            </div> 
+        </div> 
+    </section> 
 
-    <!-- Bottom -->
     <div class="bottom py-2 text-light">
         <div class="container d-flex justify-content-between">
             <div>
-                <p>Copyright © Your name</p><br>
-                <p>Distributed by: <a href="https://themewagon.com/">Themewagon</a></p>
+                <p>Copyright © Mikro</p><br>
+                <p>Distributed by: <a href="https://yahyabouhsine.ml/">Yahya Bouhsine</a></p>
             </div>
             <div>
                 <i class="fab fa-cc-visa fa-lg p-1"></i>
@@ -262,23 +204,14 @@
                 <i class="fab fa-cc-paypal fa-lg p-1"></i>
                 <i class="fab fa-cc-amazon-pay fa-lg p-1"></i>
             </div>
-        </div> <!-- end of container -->
-    </div> <!-- end of bottom -->
+        </div>
+    </div>
 
 
-    <!-- Back To Top Button -->
-    <button onclick="topFunction()" id="myBtn">
-        <img src="assets/images/up-arrow.png" alt="alternative">
-    </button>
-    <!-- end of back to top button -->
-
-
-    <!-- Scripts -->
-    <script src="{{ asset('Front/js') }}/bootstrap.min.js"></script><!-- Bootstrap framework -->
-    <script src="{{ asset('Front/js') }}/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="{{ asset('Front/js') }}/swiper.min.js"></script><!-- Swiper for image and text sliders -->
-    <script src="{{ asset('Front/js') }}/aos.js"></script><!-- AOS on Animation Scroll -->
-    <script src="{{ asset('Front/js') }}/script.js"></script> <!-- Custom scripts -->
-</body>
+    <script src="{{ asset('Front/js') }}/bootstrap.min.js"></script>
+    <script src="{{ asset('Front/js') }}/purecounter.min.js"></script>
+    <script src="{{ asset('Front/js') }}/swiper.min.js"></script>
+    <script src="{{ asset('Front/js') }}/aos.js"></script>
+    <script src="{{ asset('Front/js') }}/script.js"></script> 
 
 </html>
