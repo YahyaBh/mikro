@@ -40,7 +40,6 @@
     </section>
 
 
-    <!-- Information -->
     <section class="information">
         <div class="container-fluid">
             <div class="row text-light">
@@ -63,11 +62,10 @@
                         doloribus natus in suscipit!</p>
                 </div>
             </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of information -->
+        </div> 
+    </section> 
 
 
-    <!-- About -->
     <section class="about d-flex align-items-center text-light py-5" id="about">
         <div class="container">
             <div class="row d-flex align-items-center">
