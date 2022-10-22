@@ -3,23 +3,41 @@
     <!-- Home -->
     <section class="home py-5 d-flex align-items-center" id="header">
         <div class="container text-light py-5" data-aos="fade-right">
-            <h1 class="headline">Best <span class="home_text">Broadband</span><br>Internet Plans For You</h1>
-            <p class="para para-light py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus tempore accusamus
-                quis magnam doloremque itaque ad modi, pariatur iste labore similique officiis impedit aspernatur aperiam
-                facere architecto. Eligendi, repellendus inventore!</p>
-            <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="my-3">
-                <a class="btn" href="#plans">View Plans</a>
-            </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of home -->
+            @if (Auth::user())
+                <h1 class="headline">Welcome <span class="home_text">{{ Auth::user()->name }}</span><br>Connect With The
+                    World</h1>
+                <p class="para para-light py-3">Mikro helps you share your timeline and see other people's time line .You
+                    not gonna be alone anymore because Mikro is here</p>
+                <div class="d-flex align-items-center">
+                    <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
+                    <p>Connect From Your Home.</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
+                    <p>Only Internet Needed To Start Connecting.</p>
+                </div>
+                <div class="my-3">
+                    <a class="btn" href="#plans">GET STARTED</a>
+                </div>
+            @else
+                <h1 class="headline">Welcome To <span class="home_text">Mikro</span><br>Connect With The World</h1>
+                <p class="para para-light py-3">Mikro helps you share your timeline and see other people's time line .You
+                    not gonna be alone anymore because Mikro is here</p>
+                <div class="d-flex align-items-center">
+                    <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
+                    <p>Connect From Your Home.</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
+                    <p>Only Internet Needed To Start Connecting.</p>
+                </div>
+                <div class="my-3">
+                    <a class="btn" href="#plans">GET STARTED</a>
+                </div>
+            @endif
+
+        </div>
+    </section>
 
 
     <!-- Information -->
@@ -28,7 +46,7 @@
             <div class="row text-light">
                 <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
                     <i class="fas fa-tachometer-alt fa-3x p-2"></i>
-                    <h4 class="py-3">Download 1 GBPS</h4>
+                    <h4 class="py-3">120% Faster Application</h4>
                     <p class="para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam odit consequatur
                         doloribus natus in suscipit!</p>
                 </div>

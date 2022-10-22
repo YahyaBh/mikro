@@ -83,8 +83,8 @@
                     @if (Auth::user())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown"
-                                aria-expanded="false" href="#">{{ Auth::user()->name}}</a>
-    
+                                aria-expanded="false" href="#">{{ Auth::user()->name }}</a>
+
                             <ul class="dropdown-menu" aria-labelledby="dropdown01">
                                 <li><a class="dropdown-item" href="article.html">Profile</a></li>
                                 <li>
@@ -94,7 +94,21 @@
                                 <li>
                                     <div class="dropdown-divider"></div>
                                 </li>
-                                <li><a class="dropdown-item" href="privacy.html">Log out</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <div class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                    this.closest('form').submit(); "
+                                                role="button">
+                                                <i class="fas fa-sign-out-alt"></i>
+
+                                                {{ __('Log Out') }}
+                                            </a>
+                                        </div>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     @else

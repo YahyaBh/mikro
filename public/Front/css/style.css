@@ -37,7 +37,7 @@ a {
 }
 
 li {
-  	list-style-type: none;
+	list-style-type: none;
 }
 
 /* Section Background */
@@ -56,7 +56,7 @@ li {
 .contact,
 .testimonial,
 .footer {
-  	background-color: var(--primary);
+	background-color: var(--primary);
 }
 
 .about,
@@ -64,11 +64,11 @@ li {
 .company,
 .newsletter,
 .location {
-  	background-color: var(--primary-light);
+	background-color: var(--primary-light);
 }
 
 .bottom {
-  	background-color: black;
+	background-color: black;
 }
 
 /* Gradient Border And Background On Icons */
@@ -81,13 +81,11 @@ li {
 .location .far,
 .location .fas {
 	padding: 15px 0;
-	background: -webkit-gradient(
-		linear,
-		left top,
-		left bottom,
-		from(#0ee951),
-		to(#00dabf)
-	);
+	background: -webkit-gradient(linear,
+			left top,
+			left bottom,
+			from(#0ee951),
+			to(#00dabf));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -135,7 +133,8 @@ li {
 
 .offcanvas-collapse {
 	position: fixed;
-	top: 2.75rem; /* adjusts the height between the top of the page and the offcanvas menu */
+	top: 2.75rem;
+	/* adjusts the height between the top of the page and the offcanvas menu */
 	bottom: 0;
 	left: 100%;
 	width: 100%;
@@ -175,7 +174,7 @@ li {
 }
 
 .navbar .dropdown-item:hover {
-  	background-color: var(--primary);
+	background-color: var(--primary);
 }
 
 .navbar .dropdown-divider {
@@ -201,13 +200,11 @@ li {
 }
 
 .navbar .fa-stack-2x {
-	background: -webkit-gradient(
-		linear,
-		left top,
-		left bottom,
-		from(#0ee951),
-		to(#00dabf)
-	);
+	background: -webkit-gradient(linear,
+			left top,
+			left bottom,
+			from(#0ee951),
+			to(#00dabf));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -220,11 +217,11 @@ li {
 }
 
 .navbar .fa-stack:hover .fa-stack-2x {
-  	color: var(--primary);
+	color: var(--primary);
 }
 
 .navbar .fa-stack:hover .fa-stack-1x {
-  	color: var(--primary);
+	color: var(--primary);
 }
 
 .navbar .navbar-toggler {
@@ -246,11 +243,11 @@ li {
 }
 
 .para {
-  	width: 50%;
+	width: 50%;
 }
 
 .para-light {
-  	opacity: 0.7;
+	opacity: 0.7;
 }
 
 
@@ -258,15 +255,15 @@ li {
 /*     Information     */
 /***********************/
 .information .container-fluid .row div:first-child {
-  	background-color: var(--primary);
+	background-color: var(--primary);
 }
 
 .information .container-fluid .row div:last-child {
-  	background-color: white;
+	background-color: white;
 }
 
 .information .container-fluid .row div:nth-child(2) {
-  	background-color: var(--primary-light);
+	background-color: var(--primary-light);
 }
 
 
@@ -369,7 +366,7 @@ li {
 }
 
 .slider-1 .section-title {
-  	text-align: center;
+	text-align: center;
 }
 
 .slider-1 .h2-heading {
@@ -385,7 +382,7 @@ li {
 }
 
 .slider-1 .slider-container {
-  	position: relative;
+	position: relative;
 }
 
 .slider-1 .swiper-container {
@@ -395,7 +392,7 @@ li {
 
 .slider-1 .swiper-button-prev,
 .slider-1 .swiper-button-next {
-  	color: var(--primary);
+	color: var(--primary);
 }
 
 .slider-1 .swiper-button-prev:focus,
@@ -432,11 +429,11 @@ li {
 }
 
 .slider-1 .card-body {
-  	padding: 0;
+	padding: 0;
 }
 
 .slider-1 .testimonial-text {
-  	margin-bottom: 0.75rem;
+	margin-bottom: 0.75rem;
 }
 
 .slider-1 .testimonial-author {
@@ -452,7 +449,8 @@ li {
 
 /* Dropdown Menu */
 .navbar .dropdown .dropdown-menu {
-  	animation: fadeDropdown 0.2s; /* required for the fade animation */
+	animation: fadeDropdown 0.2s;
+	/* required for the fade animation */
 }
 
 @-webkit-keyframes fadeDropdown {
@@ -511,7 +509,7 @@ li {
 }
 
 #myBtn:hover {
-  	background-color: #0f0f11;
+	background-color: #0f0f11;
 }
 
 #myBtn img {
@@ -531,7 +529,7 @@ li {
 }
 
 .ex-header h1 {
-  	color: #fff;
+	color: #fff;
 }
 
 .ex-basic-1 .list-unstyled .fas {
@@ -540,7 +538,7 @@ li {
 }
 
 .ex-basic-1 .list-unstyled .flex-grow-1 {
-  	margin-left: 0.5rem;
+	margin-left: 0.5rem;
 }
 
 .ex-basic-1 .text-box {
@@ -559,7 +557,7 @@ li {
 }
 
 .ex-cards-1 .card .fa-stack-2x {
-  	color: var(--secondary);
+	color: var(--secondary);
 }
 
 .ex-cards-1 .card .fa-stack-1x {
@@ -570,7 +568,7 @@ li {
 }
 
 .ex-cards-1 .card .list-unstyled .flex-grow-1 {
-  	margin-left: 2.25rem;
+	margin-left: 2.25rem;
 }
 
 .ex-cards-1 .card .list-unstyled .flex-grow-1 h5 {
@@ -583,6 +581,7 @@ li {
 /*     Media Queries     */
 /*************************/
 @media only screen and (max-width: 1024px) {
+
 	.services,
 	.work,
 	.testimonial,
@@ -700,7 +699,10 @@ li {
 
 
 .body-login {
-	background-color: #0f0f11;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/pexels-afta-putta-gunawan-1036804.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -710,9 +712,53 @@ li {
 }
 
 .form-login {
-	
-	background-color: #fff;
-	height: 250px;
-	width: 200px;
-	padding: 2rem;
+	background-color: rgba(255, 255, 255, 0.123);
+	backdrop-filter: blur(12px);
+			height: 250px;
+			width: 200px;
+			padding: 2rem;
+			border-radius: 12px;
+}
+
+
+.form-login input[type='email'],input[type='password'] {
+	width: 100%;
+	height: 30px;
+	background: none;
+	outline: none;
+	border: none;
+	border-bottom: #fff 2px solid;
+	margin-bottom: 10px;
+}
+
+.form-login input::placeholder{
+	color: rgba(255, 255, 255, 0.589);
+}
+
+.form-login .text-gray-600 {
+	background: none;
+	outline: none;
+	border: none;
+	color: #eee;
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+.form-login .button-login {
+	width: 100%;
+	height: 30px;
+	background-color: #0ee951;
+	color: #0f0f11;
+	border-radius: 2px;
+	border: none;
+	margin-top: 50%;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.form-login .button-login:hover {
+	transform: scale(.95);
+	background-color: transparent;
+	border-bottom: #0ee951 2px solid;
+	color: #f7f9fd;
 }

@@ -9,9 +9,9 @@
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ session('status') }}
-        </div>
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
         @endif
 
         <form method="POST" action="{{ route('login') }}">
@@ -19,12 +19,14 @@
 
             <div>
                 <label for="email" value="{{ __('Email') }}"></label>
-                <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <input id="email" placeholder="Email" class="block mt-1 w-full" type="email" name="email"
+                    :value="old('email')" required autofocus />
             </div>
 
             <div class="mt-4">
                 <label for="password" value="{{ __('Password') }}"></label>
-                <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <input id="password" placeholder="Password" class="block mt-1 w-full" type="password" name="password"
+                    required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
@@ -33,17 +35,23 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
+            <br>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-                @endif
 
-                <button class="ml-4">
+                <button class="button-login ml-4">
                     {{ __('Log in') }}
                 </button>
+                @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                        href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                        href="{{ route('password.request') }}">
+                        {{ __('Register?') }}
+                    </a>
+                @endif
             </div>
         </form>
     </div>

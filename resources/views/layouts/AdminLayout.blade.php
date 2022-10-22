@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, AdminWrap lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, AdminWrap lite design, AdminWrap lite dashboard bootstrap 5 dashboard template">
@@ -13,30 +12,16 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Mikro Admin Dashboard</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
-    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('Admin/assets') }}/images/favicon.png">
-    <!-- Bootstrap Core CSS -->
     <link href="{{ asset('Admin/assets') }}/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('Admin/assets') }}/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
-    <!-- This page CSS -->
-    <!-- chartist CSS -->
     <link href="{{ asset('Admin/assets') }}/node_modules/morrisjs/morris.css" rel="stylesheet">
-    <!--c3 CSS -->
     <link href="{{ asset('Admin/assets') }}/node_modules/c3-master/c3.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="{{ asset('Admin/css') }}/style.css" rel="stylesheet">
-    <!-- Dashboard 1 Page CSS -->
     <link href="{{ asset('Admin/css') }}/pages/dashboard1.css" rel="stylesheet">
-    <!-- You can change the theme colors from here -->
     <link href="{{ asset('Admin/css') }}/colors/default.css" id="theme" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.{{ asset('Admin/js') }}1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -106,7 +91,31 @@
                                 aria-expanded="false"><img src="{{ asset('Admin/assets') }}/images/users/1.jpg"
                                     alt="user" class="" /> <span class="hidden-md-down">Mark Sanders
                                     &nbsp;</span> </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <div class="nav-item">
+                                        <a class="nav-link" role="button">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            Profile
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <div class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                        this.closest('form').submit(); "
+                                                role="button">
+                                                <i class="fas fa-sign-out-alt"></i>
+
+                                                {{ __('Log Out') }}
+                                            </a>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -119,26 +128,28 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{ route('dashboard') }}" aria-expanded="false"><i
-                                    class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('dashboard') }}"
+                                aria-expanded="false"><i class="fa fa-tachometer"></i><span
+                                    class="hide-menu">Dashboard</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" data-toggle="modal" data-target="#exampleModalCenter"
-                                aria-expanded="false"><i class="far fa-folder-plus"></i><span class="hide-menu">Add Category</span></a>
+                                aria-expanded="false"><i class="far fa-folder-plus"></i><span class="hide-menu">Add
+                                    Category</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('admin.cat.home') }}"
-                            aria-expanded="false">
-                            <i class="far fa-folder-plus"></i><span class="hide-menu">Categories</span></a>
-                    </li>
+                                aria-expanded="false">
+                                <i class="far fa-folder-plus"></i><span class="hide-menu">Categories</span></a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-    
+
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
