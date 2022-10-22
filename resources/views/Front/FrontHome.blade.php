@@ -1,7 +1,8 @@
 @extends('layouts.FrontLayout')
 @section('Front-Contain')
-    <!-- Home -->
-    <section class="home py-5 d-flex align-items-center" id="header">
+
+
+<section class="home py-5 d-flex align-items-center" id="header">
         <div class="container text-light py-5" data-aos="fade-right">
             @if (Auth::user())
                 <h1 class="headline">Welcome <span class="home_text">{{ Auth::user()->name }}</span><br>Connect With The
@@ -86,12 +87,11 @@
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down">
                     <img class="img-fluid" src="{{ asset('Front/assets') }}/images/about.jpg" alt="about">
                 </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of about -->
+            </div>
+        </div> 
+    </section>
 
 
-    <!-- Services -->
     <section class="services d-flex align-items-center py-5" id="services">
         <div class="container text-light">
             <div class="text-center pb-4">
@@ -152,106 +152,10 @@
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </section> <!-- end of services -->
+    </section>
 
 
-    <!-- Plans -->
-    <section class="plans d-flex align-items-center py-5" id="plans">
-        <div class="container text-light">
-            <div class="text-center pb-4">
-                <p>OUR PLANS</p>
-                <h2 class="py-2">Explore unlimited possibilities</h2>
-                <p class="para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores, quia
-                    accusantium sunt corporis optio recusandae? Nostrum libero pariatur cumque, ipsa dolores voluptatibus
-                    voluptate alias sit fuga. Itaque, ea quo.</p>
-            </div>
-            <div class="row gy-4" data-aos="zoom-in">
-                <div class="col-lg-4">
-                    <div class="card bg-transparent px-4">
-                        <h4 class="py-2">BASIC BUNDLE</h4>
-                        <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <h4 class="py-3">$24/Month</h4>
-                        <div class="my-3">
-                            <a class="btn" href="#your-link">View Plans</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4">
-                    <div class="card bg-transparent px-4">
-                        <h4 class="py-2">BUSINESS BUNDLE</h4>
-                        <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <h4 class="py-3">$99/Month</h4>
-                        <div class="my-3">
-                            <a class="btn" href="#your-link">View Plans</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card bg-transparent px-4">
-                        <h4 class="py-2">PREMIUM BUNDLE</h4>
-                        <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <div class="block d-flex align-items-center">
-                            <p class="pe-2"><i class="far fa-check-circle fa-1x"></i></p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <h4 class="py-3">$199/Month</h4>
-                        <div class="my-3">
-                            <a class="btn" href="#your-link">View Plans</a>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of plans -->
-
-
-    <!-- Work -->
     <section class="work d-flex align-items-center py-5">
         <div class="container-fluid text-light">
             <div class="row">
@@ -298,149 +202,8 @@
                 </div> <!-- end of col-lg-5 -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </section> <!-- end of work -->
+    </section>
 
-
-    <!-- Testimonials -->
-    <div class="slider-1 testimonial text-light d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="text-center w-lg-75 m-auto pb-4">
-                    <p>TESTIMONIALS</p>
-                    <h2 class="py-2">What Our Clients Says</h2>
-                    <p class="para-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci esse facilis
-                        vel, neque ipsa mollitia impedit, commodi ab illo dignissimos, voluptatum quae amet sed tenetur
-                        dolores reprehenderit laudantium quo sint.</p>
-                </div>
-            </div> <!-- end of row -->
-            <div class="row p-2" data-aos="zoom-in">
-                <div class="col-lg-12">
-
-                    <!-- Card Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container card-slider">
-                            <div class="swiper-wrapper">
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card p-4">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi
-                                            officia laborum qui iste quidem!</p>
-
-                                        <div class="d-flex pt-4">
-                                            <div>
-                                                <img class="avatar"
-                                                    src="{{ asset('Front/assets') }}/images/testimonial-1.jpg"
-                                                    alt="testimonial">
-                                            </div>
-                                            <div class="ms-3 pt-2">
-                                                <h6>Marlene Visconte</h6>
-                                                <p>General Manager - Scouter</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card p-4">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi
-                                            officia laborum qui iste quidem!</p>
-                                        <div class="d-flex pt-4">
-                                            <div>
-                                                <img class="avatar"
-                                                    src="{{ asset('Front/assets') }}/images/testimonial-2.jpg"
-                                                    alt="testimonial">
-                                            </div>
-                                            <div class="ms-3 pt-2">
-                                                <h6>John Spiker</h6>
-                                                <p>Team Leader - Vanquish</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card p-4">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi
-                                            officia laborum qui iste quidem!</p>
-                                        <div class="d-flex pt-4">
-                                            <div>
-                                                <img class="avatar"
-                                                    src="{{ asset('Front/assets') }}/images/testimonial-3.jpg"
-                                                    alt="testimonial">
-                                            </div>
-                                            <div class="ms-3 pt-2">
-                                                <h6>Stella Virtuoso</h6>
-                                                <p>Design Chief - Upscale</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card p-4">
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi
-                                            officia laborum qui iste quidem!</p>
-                                        <div class="d-flex pt-4">
-                                            <div>
-                                                <img class="avatar"
-                                                    src="{{ asset('Front/assets') }}/images/testimonial-4.jpg"
-                                                    alt="testimonial">
-                                            </div>
-                                            <div class="ms-3 pt-2">
-                                                <p>Mike tim</p>
-                                                <p>Investor - TechGroww</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                            </div> <!-- end of swiper-wrapper -->
-
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <!-- end of add arrows -->
-
-                        </div> <!-- end of swiper-container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of card slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of testimonials -->
-
-
-    <!-- Newsletter -->
-    <section class="newsletter text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
-                    <h4 class="py-1">Subscribe to our Newsletter</h4>
-                    <p class="para-light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor deleniti nobis
-                        amet accusamus debitis facilis quibusdam officia laborum nesciunt. Nihil.</p>
-                </div>
-                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-                    <div class="input-group my-3">
-                        <input type="text" class="form-control p-2" placeholder="Enter your email address"
-                            aria-label="Recipient's email">
-                        <button class="btn-secondary text-light" type="button">Subscribe</button>
-                    </div>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of newsletter -->
-
-
-    <!-- Contact -->
     <section class="contact d-flex align-items-center py-5" id="contact">
         <div class="container-fluid text-light">
             <div class="row">
@@ -488,42 +251,7 @@
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </section> <!-- end of contact -->
+    </section>
 
 
-    <!-- Location -->
-    <section class="location text-light py-5">
-        <div class="container" data-aos="zoom-in">
-            <div class="row">
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-map fa-3x"></i></div>
-                    <div class="ms-2">
-                        <h6>ADDRESS</h6>
-                        <p>Teuku Umar ST. 1919</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="fas fa-mobile-alt fa-3x"></i></div>
-                    <div class="ms-2">
-                        <h6>CALL FOR QUERY</h6>
-                        <p>(800) 265 216 2020</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-envelope fa-3x"></i></div>
-                    <div class="ms-2">
-                        <h6>SEND US MESSAGE</h6>
-                        <p>infodemofile@example.com</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center">
-                    <div class="p-2"><i class="far fa-clock fa-3x"></i></div>
-                    <div class="ms-2">
-                        <h6>OPENING HOURS</h6>
-                        <p>09:00 AM - 18:00 PM</p>
-                    </div>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of location -->
 @endsection
