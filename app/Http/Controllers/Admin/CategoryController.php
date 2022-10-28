@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cat;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -11,11 +12,12 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $data['cats'] = Cat::all();
-        return view('Admin.Cats.CatHome')->with($data);
-        // return redirect()->route('');
-        // return back();
-        // return response()->json([]);
+        $data = Cat::all();
+        $cat_data = Cat::count();
+        $acc_data = User::count();
+        $post_data = User::count();
+        return view('Admin.Cats.CatHome')->with(['cats' => $data , 'page_data' => $cat_data , 'acc_data' => $acc_data , 'post_data' => $post_data]);
+        
     }
 
     public function add_cat(Request $request)

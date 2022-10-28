@@ -8,7 +8,7 @@
         </ul>
     @endif
 
-    
+
 
     <div class="page-wrapper">
         <div class="container-fluid">
@@ -26,31 +26,17 @@
 
             <div class="row mb-5">
                 <div class="card-deck">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    @foreach ($cats as $cat)
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="round"><img
+                                            src="{{ asset('upload/cats') }}/{{ $cat->img }}" alt="{{ $cat->name_en }}"
+                                            width="50"></span>{{ $cat->name_en }}</h5>
+                                <p class="card-text">{{ $cat->desc_en }}</p>
+                                <p class="card-text"><small class="text-muted">{{ $cat->created_at }}</small></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to show that equal
-                                height action.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -63,13 +49,12 @@
                         <div class="card-body">
                             <div class="d-flex no-block">
                                 <div>
-                                    <h5 class="card-title mb-0">Sales Chart</h5>
+                                    <h5 class="card-title mb-0">Mikro Analyzing</h5>
                                 </div>
                                 <div class="ms-auto">
                                     <ul class="list-inline text-center font-12">
-                                        <li><i class="fa fa-circle text-success"></i> SITE A</li>
-                                        <li><i class="fa fa-circle text-info"></i> SITE B</li>
-                                        <li><i class="fa fa-circle text-primary"></i> SITE C</li>
+                                        <li><i class="fa fa-circle text-success"></i> Category Created</li>
+                                        <li><i class="fa fa-circle text-info"></i> Posts Created</li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,12 +68,6 @@
                         <div class="card-body">
                             <div class="d-flex mb-4 no-block">
                                 <h5 class="card-title mb-0 align-self-center">Our Visitors</h5>
-                                <div class="ms-auto">
-                                    <select class="form-select b-0">
-                                        <option selected="">Today</option>
-                                        <option value="1">Tomorrow</option>
-                                    </select>
-                                </div>
                             </div>
                             <div id="visitor" style="height:260px; width:100%;"></div>
                             <ul class="list-inline mt-4 text-center font-12">
@@ -158,7 +137,7 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div>
-                                        <h5 class="card-title">Projects of the Month</h5>
+                                        <h5 class="card-title">All Categories</h5>
                                     </div>
                                     <div class="ms-auto">
                                         <button class="btn btn-success" data-toggle="modal"
@@ -176,7 +155,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @foreach ($cats as $cat)
+                                            @foreach ($cats_all as $cat)
                                                 <tr class="active">
                                                     <td><span class="round"><img
                                                                 src="{{ asset('upload/cats') }}/{{ $cat->img }}"
@@ -188,9 +167,10 @@
                                                     <td>{{ $cat->desc_en }}</td>
                                                     <td>{{ $cat->id }}</td>
                                                 </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
+                                    <a style="text-align: center ;padding : 12px"  href="{{ route('admin.cat.home') }}">SHOW ALL</a>
                                 </div>
                             </div>
                         </div>
@@ -302,11 +282,5 @@
                 </div>
                 <!-- End Feeds -->
             </div>
-            <!-- ============================================================== -->
-            <!-- End Notification And Feeds -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- End Page Content -->
-            <!-- ============================================================== -->
         </div>
     @endsection

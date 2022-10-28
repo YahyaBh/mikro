@@ -16,7 +16,6 @@
     <link href="{{ asset('Front/css') }}/aos.min.css" rel="stylesheet">
     <link href="{{ asset('Front/css') }}/swiper.css" rel="stylesheet">
     <link href="{{ asset('Front/css') }}/style.css" rel="stylesheet">
-
     <link rel="icon" href="{{ asset('Front/assets') }}/images/favicon.png">
 </head>
 
@@ -25,7 +24,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
         <div class="container">
 
-            <a class="navbar-brand logo-text" href="index.html">Mirko</a>
+            <a class="navbar-brand logo-text" href="{{ url('/') }}">MIKRO</a>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
                 aria-label="Toggle navigation">
@@ -41,50 +40,55 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#posts">Posts</a>
                     </li>
-                    
+
                     @if (Auth::user())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown"
                                 aria-expanded="false" href="#">{{ Auth::user()->name }}</a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item" href="article.html">Profile</a></li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li><a class="dropdown-item" href="terms.html">Settings</a></li>
-                                <li>
-                                    <div class="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <div class="nav-item">
-                                            <a class="nav-link" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                    this.closest('form').submit(); "
-                                                role="button">
-                                                <i class="fas fa-sign-out-alt"></i>
 
-                                                {{ __('Log Out') }}
-                                            </a>
-                                        </div>
-                                    </form>
+                                <li>
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                                        href="{{ route('profile.show') }}">
+                                        <i class="fas fa-sign-out-alt"></i>
+
+                                        Profile
+                                    </a>
                                 </li>
-                            </ul>
                         </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <li>
+                            <div class="dropdown-divider"></div>
                         </li>
-                    @endif
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <div class="nav-item">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit(); "
+                                        role="button">
+                                        <i class="fas fa-sign-out-alt"></i>
+
+                                        {{ __('Log Out') }}
+                                    </a>
+                                </div>
+                            </form>
+                        </li>
+                </ul>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                @endif
 
                 </ul>
 
             </div>
-        </div> 
+        </div>
     </nav>
 
 
@@ -117,7 +121,7 @@
                             </a>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <div class="col-lg-3 py-4 py-md-5">
                     <div>
@@ -141,7 +145,7 @@
                             </a>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <div class="col-lg-3 py-4 py-md-5">
                     <div>
@@ -188,9 +192,9 @@
                         </div>
                     </div>
                 </div>
-            </div> 
-        </div> 
-    </section> 
+            </div>
+        </div>
+    </section>
 
     <div class="bottom py-2 text-light">
         <div class="container d-flex justify-content-between">
@@ -212,6 +216,7 @@
     <script src="{{ asset('Front/js') }}/purecounter.min.js"></script>
     <script src="{{ asset('Front/js') }}/swiper.min.js"></script>
     <script src="{{ asset('Front/js') }}/aos.js"></script>
-    <script src="{{ asset('Front/js') }}/script.js"></script> 
+    <script src="{{ asset('Front/js') }}/script.js"></script>
+
 
 </html>

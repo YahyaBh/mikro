@@ -1,29 +1,20 @@
-/*
-Template Name: Admin Pro Admin
-Author: Wrappixel
-Email: niravjoshi87@gmail.com
-File: js
-*/
-$(function() {
+$(function () {
     "use strict";
-    // ============================================================== 
-    // Our Visitor
-    // ============================================================== 
 
     var chart = c3.generate({
         bindto: '#visitor',
         data: {
             columns: [
-                ['Other', 30],
-                ['Desktop', 10],
-                ['Tablet', 40],
-                ['Mobile', 50],
+                ['Other', page_data],
+                ['Desktop', page_data],
+                ['Tablet', page_data],
+                ['Mobile', page_data],
             ],
 
             type: 'donut',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
             label: {
@@ -105,9 +96,9 @@ $(function() {
             ],
 
             type: 'donut',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
             label: {
@@ -140,9 +131,9 @@ $(function() {
                 ['data', 91.4]
             ],
             type: 'gauge',
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); }
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
 
         color: {
@@ -161,7 +152,7 @@ $(function() {
             width: 150
         }
     });
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 10]
@@ -169,7 +160,7 @@ $(function() {
         });
     }, 1000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 50]
@@ -177,7 +168,7 @@ $(function() {
         });
     }, 2000);
 
-    setTimeout(function() {
+    setTimeout(function () {
         chart.load({
             columns: [
                 ['data', 70]
@@ -191,46 +182,46 @@ $(function() {
     Morris.Area({
         element: 'sales-chart',
         data: [{
-                period: '2011',
-                Sales: 50,
-                Earning: 80,
-                Marketing: 20
-            }, {
-                period: '2012',
-                Sales: 130,
-                Earning: 100,
-                Marketing: 80
-            }, {
-                period: '2013',
-                Sales: 80,
-                Earning: 60,
-                Marketing: 70
-            }, {
-                period: '2014',
-                Sales: 70,
-                Earning: 200,
-                Marketing: 140
-            }, {
-                period: '2015',
-                Sales: 180,
-                Earning: 150,
-                Marketing: 140
-            }, {
-                period: '2016',
-                Sales: 105,
-                Earning: 100,
-                Marketing: 80
-            },
-            {
-                period: '2017',
-                Sales: 250,
-                Earning: 150,
-                Marketing: 200
-            }
+            period: '2021',
+            Categories: page_data,
+            Accounts: acc_data,
+            Posts: 0
+        }, {
+            period: '2022',
+            Categories: page_data,
+            Accounts: acc_data,
+            Posts: 0
+        }, {
+            period: '2023',
+            Categories: null,
+            Accounts: null,
+            Posts: null
+        }, {
+            period: '2024',
+            Categories: null,
+            Accounts: null,
+            Posts: null
+        }, {
+            period: '2025',
+            Categories: null,
+            Accounts: null,
+            Posts: null
+        }, {
+            period: '2026',
+            Categories: null,
+            Accounts: null,
+            Posts: null
+        },
+        {
+            period: '2027',
+            Categories: null,
+            Accounts: null,
+            Posts: null
+        }
         ],
         xkey: 'period',
-        ykeys: ['Sales', 'Earning', 'Marketing'],
-        labels: ['Site A', 'Site B', 'Site C'],
+        ykeys: ['Categories', 'Accounts', 'Posts'],
+        labels: ['Categories Created', 'Accounts Created', 'Posts Created'],
         pointSize: 0,
         fillOpacity: 0,
         pointStrokeColors: ['#20aee3', '#24d2b5', '#6772e5'],

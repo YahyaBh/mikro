@@ -64,8 +64,8 @@
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
                                 id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="{{ asset('upload') }}{{ Auth::user()->profile }}"
-                                    alt="admin" /><span class="hidden-md-down">{{ Auth::user()->name }}
+                                aria-expanded="false"><img src="{{ Auth::user()->profile_photo_path }}"
+                                    alt="admin" style="margin-right: 5px" /><span class="hidden-md-down">{{ Auth::user()->name }}
                                     &nbsp;</span> </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
@@ -77,7 +77,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}">
+                                    <form method="GET" action="{{ route('logout') }}">
                                         @csrf
                                         <div class="nav-item">
                                             <a class="nav-link" href="{{ route('logout') }}"
@@ -199,6 +199,12 @@
     <script src="{{ asset('Admin/assets') }}/node_modules/c3-master/c3.min.js"></script>
     <script src="{{ asset('Admin/js') }}/dashboard1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+
+    <script>
+        var page_data = {{ Js::from($page_data) }};
+        var acc_data = {{ Js::from($acc_data) }};
+
+    </script>
 </body>
 
 </html>
